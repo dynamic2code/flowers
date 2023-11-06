@@ -3,6 +3,8 @@ package com.example.flowers
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,7 +35,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -56,8 +62,8 @@ fun LandingPage(){
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    titleContentColor = Color.White,
                 ),
                 title = {
                     Text(
@@ -69,11 +75,17 @@ fun LandingPage(){
                         Row {
                             Icon(
                                 imageVector = Icons.Filled.Search,
-                                contentDescription = "search"
+                                contentDescription = "search",
+                                tint = Color.White,
+                                modifier = Modifier.size(width = 20.dp, height = 20.dp)
                             )
                             Icon(
                                 imageVector = Icons.Filled.ShoppingCart,
-                                contentDescription = "cart")
+                                contentDescription = "cart",
+                                tint = Color.White,
+                                modifier = Modifier.size(width = 20.dp, height = 20.dp)
+                            )
+
                         }
 
                     }
@@ -93,20 +105,26 @@ fun LandingPage(){
 @Composable
 fun Item(index: Int){
     Card(
-        modifier = Modifier.size(width = 450.dp, height = 360.dp)
+        modifier = Modifier
+            .size(width = 450.dp, height = 360.dp)
+            .background(Color.White)
     ) {
         Column(
             modifier = Modifier
-                .padding(16.dp)
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.Bottom
+                .fillMaxSize()
+                .background(Color.White),
+            verticalArrangement = Arrangement.Center, // Center the items vertically
+            horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
             ElevatedCard (
                 modifier = Modifier.size(width = 350.dp, height = 300.dp)
 
             ){
-
+                Image(painter = painterResource(id = R.drawable.flower),
+                    contentDescription ="flower",
+                    modifier = Modifier.fillMaxSize()
+                    )
             }
             Spacer(modifier = Modifier.height(10.dp))
             Text(text = "flower name")

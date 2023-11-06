@@ -2,10 +2,10 @@ package com.example.flowers.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val Green80 = Color(0xFF4CAF50)
+val Green280 = Color(0xFF548C2E)
+val White80 = Color(0xFFFEFEFF)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val Green40 = Color(0xFF23C711)
+val Green240 = Color(0xFF548C2E)
+val Black40 = Color(0xFF050505)
